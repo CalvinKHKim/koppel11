@@ -174,11 +174,14 @@ def main():
         description="Tira submission for PPM approach (koppel11)")
     parser.add_argument("-i", action="store", help="path to corpus directory")
     parser.add_argument("-o", action="store", help="path to output directory")
+    parser.add_argument("-r", action="store", help="set number of repetitions")
     args = vars(parser.parse_args())
 
     corpusdir = args["i"]
     outputdir = args["o"]
-    if corpusdir == None or outputdir == None:
+    repetitions = int(args["r"])
+    
+    if corpusdir == None or outputdir == None or repetitions == None:
         parser.print_help()
         return
 
